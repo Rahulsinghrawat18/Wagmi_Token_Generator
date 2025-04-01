@@ -1,76 +1,96 @@
-# WAGMI - Token Launchpad
+# Wagmi Token Generator
 
-![WAGMI Banner]()  
-
-[![Website]()]()
-[![GitHub]()](LICENSE)
-[![Core Blockchain Testnet]()]()
+![WAGMI Token Generator](https://your-project-image-url.com)
 
 ## 🚀 Overview
-**WAGMI** (We're All Gonna Make It) is a **token launchpad** deployed on the **Core Blockchain Testnet**. It allows users to **create and list tokens**, enables others to **buy them**, and charges a **listing fee** for the launchpad developer. Tokens get launched upon meeting the **funding goal**.
+Wagmi Token Generator is a decentralized application (dApp) that allows users to easily create and list ERC-20 tokens on an EVM-compatible blockchain. The platform enables project creators to launch their tokens while providing investors with a secure and transparent way to participate in token sales.
 
-## ✨ Features
-- **Token Creation & Listing**: Users can create and list their own tokens.
-- **Token Purchase**: Other users can invest in listed tokens.
-- **Funding Goal Mechanism**: Tokens are launched only if the funding goal is met.
-- **Decentralized Transactions**: Built on the Core Blockchain Testnet.
-- **Secure & Transparent**: Implements blockchain security principles.
+## 🔥 Features
+- **Token Creation**: Generate ERC-20 tokens with customizable parameters.
+- **Token Listing**: List created tokens on the platform.
+- **Funding Goals**: Tokens are launched upon meeting funding goals.
+- **Decentralized & Transparent**: Utilizes blockchain for secure transactions.
+- **Seamless User Experience**: Simple and intuitive UI.
 
-## 🛠 Tech Stack
-- **Solidity** - Smart Contracts
-- **React.js** - Frontend Development
-- **Hardhat** - Smart Contract Deployment & Testing
-- **Web3.js / ethers.js** - Blockchain Interaction
-- **Core Blockchain Testnet** - Deployment Network
+## 🛠️ Tech Stack
+- **Frontend**: React, Next.js, Tailwind CSS
+- **Backend**: Node.js
+- **Blockchain**: Solidity, Hardhat
+- **Smart Contracts**: ERC-20 Token, Launchpad Contract
+- **Deployment**: Vercel, Alchemy (Core Blockchain Testnet)
 
-## 📌 Setup Instructions
+## 🏗️ Installation & Setup
 ### Prerequisites
-Ensure you have the following installed:
-- Node.js & npm
-- Metamask Wallet
-- Core Blockchain Testnet configured in Metamask
+- Node.js v18+
+- MetaMask (or any Web3 wallet)
+- Hardhat (for local testing)
 
-### 🔧 Installation
-```sh
-# Clone the repository
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/Rahulsinghrawat18/Wagmi_Token_Generator.git
-cd WAGMI
+cd Wagmi_Token_Generator
+```
 
-# Install dependencies
+### 2️⃣ Install Dependencies
+```bash
 npm install
-
-# Start the development server
-npm start
 ```
 
-## 📜 Smart Contract Deployment
-### Hardhat Setup
-```sh
-# Install dependencies
-npm install --save-dev hardhat ethers @nomiclabs/hardhat-ethers
+### 3️⃣ Set Up Environment Variables
+Create a `.env` file and add the following:
+```ini
+CORE_TESTNET_RPC_URL=https://rpc.test.btcs.network
+PRIVATE_KEY=your_private_key
+NEXT_PUBLIC_ALCHEMY_API_KEY=your_alchemy_key
+```
+> ⚠️ **Do NOT expose your private key in public repositories.**
 
-# Compile smart contracts
-npx hardhat compile
+### 4️⃣ Deploy Smart Contracts
+```bash
+npx hardhat run scripts/deploy.js --network core-testnet
+```
+This will output the contract address. Update the frontend accordingly.
 
-# Deploy contracts
-npx hardhat run scripts/deploy.js --network testnet
+### 5️⃣ Start the Development Server
+```bash
+npm run dev
+```
+Access the app at `http://localhost:3000/`
+
+## 📜 Smart Contracts
+### Token Factory
+```solidity
+contract TokenFactory {
+    function createToken(string memory name, string memory symbol, uint256 supply) external;
+}
+```
+### Launchpad
+```solidity
+contract Launchpad {
+    function listToken(address tokenAddress, uint256 fundingGoal) external;
+}
 ```
 
-## 📸 Screenshots
-| Homepage | Token Creation |
-|----------|---------------|
-| ![Home]() | ![Token Creation]() |
+## 📌 Deployment on Vercel
+To deploy the frontend:
+```bash
+vercel --prod
+```
 
-## 📢 Live Demo
-🔗 [Visit WAGMI Token Launchpad]()
+## 📜 License
+This project is licensed under the **MIT License**.
+
+## 🌐 Live Demo
+[🔗 View the Live App](https://wagmifun.netlify.app/)
 
 ## 🤝 Contributing
-Contributions are welcome! Feel free to fork the repo, open issues, or submit PRs.
+Feel free to fork this repo, create a new branch, and submit a pull request! Contributions are welcome.
 
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 📩 Contact
+For any inquiries or collaborations, reach out at:
+📧 **rawatji7788@gmail.com**
 
-## 📬 Contact
-For any inquiries, reach out to:
-- **GitHub**: [Rahulsinghrawat18](https://github.com/Rahulsinghrawat18)
-- **Email**: rawatji7788@gmail.com
+---
+
+🎉 Happy Building! WAGMI 🚀
+
